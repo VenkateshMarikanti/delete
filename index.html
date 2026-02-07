@@ -8,20 +8,21 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            background-color: #f4f6f8;
         }
 
         .container {
             background-color: #ffffff;
-            padding: 40px;
+            padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            width: 420px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            width: 380px;
             text-align: center;
         }
 
@@ -31,34 +32,34 @@
         }
 
         p {
-            color: #555;
             font-size: 14px;
-            margin-bottom: 25px;
+            color: #444;
+            margin-bottom: 20px;
         }
 
         input, textarea {
-            width: 92%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
             border-radius: 8px;
-            font-size: 15px;
+            border: 1px solid #ccc;
+            font-size: 14px;
         }
 
         textarea {
             resize: none;
-            height: 80px;
+            height: 70px;
         }
 
         button {
             background-color: #d32f2f;
             color: white;
             border: none;
-            padding: 12px 25px;
+            padding: 12px 20px;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
-            margin-top: 15px;
+            font-size: 15px;
+            margin-top: 10px;
         }
 
         button:hover {
@@ -67,7 +68,7 @@
 
         .note {
             font-size: 12px;
-            color: #777;
+            color: #666;
             margin-top: 15px;
         }
     </style>
@@ -76,38 +77,35 @@
 <body>
 
 <div class="container">
-    <h2>Delete Your Scheme Master Account</h2>
+    <h2>Delete Account</h2>
+
     <p>
-        We’re sorry to see you leave.  
-        Please fill in the details below to request permanent deletion of your account and associated data.
+        This page allows you to request deletion of your Scheme Master account.
+        Account deletion is permanent and cannot be undone.
     </p>
 
-    <form id="deleteForm" onsubmit="return handleDelete(event)">
-        <input type="text" id="name" placeholder="Full Name" required>
-        <input type="email" id="email" placeholder="Registered Email Address" required>
-        <input type="password" id="password" placeholder="Account Password" required>
-        <textarea id="reason" placeholder="Reason for deleting account (optional)"></textarea>
-        <button type="submit">Delete My Account</button>
+    <form onsubmit="handleDelete(event)">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Registered Email" required>
+        <textarea placeholder="Reason for deletion (optional)"></textarea>
+
+        <button type="submit">Request Account Deletion</button>
     </form>
 
-    <div class="note">
-        ⚠️ Account deletion is permanent and cannot be undone.
-    </div>
+    <p class="note">
+        Note: Your request will be reviewed and your account data will be permanently
+        deleted within a reasonable time, as per our privacy policy.
+    </p>
 </div>
 
 <script>
     function handleDelete(event) {
         event.preventDefault();
-
         document.body.innerHTML = `
-            <h1 style="
-                text-align:center;
-                margin-top:20%;
-                font-family:Arial, sans-serif;
-                color:#2e7d32;">
+            <h2 style="text-align:center; margin-top:20%; font-family:Arial;">
                 Your account deletion request has been received.<br><br>
-                We will process it within 24–48 hours.
-            </h1>
+                We will process it shortly.
+            </h2>
         `;
     }
 </script>
